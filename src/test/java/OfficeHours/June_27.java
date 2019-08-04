@@ -2,7 +2,7 @@ package OfficeHours;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//  import static com.cybertek.tests.OfficeHours.library.*;
+//  import static com.pages.tests.OfficeHours.library.*;
 public class June_27 {
 
     public static void mains() {

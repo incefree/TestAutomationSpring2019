@@ -4,14 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 // mostly utility methods are always STATIC
 
 public class VYTrackUtils {
-
     //we don't want to access these variables outside
     private static String usernamelocator = "prependedInput";
     private static String passwordLocator = "prependedInput2";
+    private static String loaderMaskLocator = "div[class='loader-mask shown']";
 
 
     /**
@@ -44,6 +46,14 @@ public class VYTrackUtils {
         SeleniumUtils.clickWithWait(driver, By.xpath(tabLocator), 5);
         SeleniumUtils.waitPlease(1);
         driver.findElement(By.xpath(moduleLocator)).click();
+
+//        SeleniumUtils.clickWithWait(driver, By.xpath(moduleLocator), 5);
+
         SeleniumUtils.waitPlease(2);
+    }
+
+    public static void waitUntilLoaderScreenDisappear(WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Long.valueOf(ConfigurationReader.getProperty("explicitwait")));
+
     }
 }
